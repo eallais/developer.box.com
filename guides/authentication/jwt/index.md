@@ -22,31 +22,26 @@ next_page_id: authentication/jwt/as-user
 previous_page_id: authentication/jwt/with-sdk
 source_url: >-
   https://github.com/box/developer.box.com/blob/main/content/guides/authentication/jwt/index.md
+fullyTranslated: true
 ---
-# JWT Auth
+# JWT認証
 
-Server-side authentication using JSON Web Tokens (JWT) is the most common way to
-authenticate to the Box API. JWT is an [open standard](https://jwt.io/)
-designed to allow powerful server-to-server authentication.
+Server-side authentication using JSON Web Tokens (JWT) is the most common way to authenticate to the Box API. JWT is an [open standard](https://jwt.io/) designed to allow powerful server-to-server authentication.
 
 <ImageFrame border>
 
-![The JWT flow](./jwt-flow.png)
+![JWTフロー](./jwt-flow.png)
 
 </ImageFrame>
 
-Server-side authentication using JWT is only available to the Custom Application
-[app type][app-type]. This authentication method does not require end-user
-interaction and, if granted the proper privileges, can be used
-to act on behalf of any user in an enterprise.
+Server-side authentication using JWT is only available to the Custom Application [app type][app-type]. This authentication method does not require end-user interaction and, if granted the proper privileges, can be used to act on behalf of any user in an enterprise.
 
 There are two ways you can verify an application's permissions:
 
-- using a public and private key pair
-- using a client id and client secret (Client Credentials Grant)
+* using a public and private key pair
+* using a client id and client secret (Client Credentials Grant)
 
-To learn more about these options visit our guide on using
-[JWT without SDKs][jwtnosdk]. 
+To learn more about these options visit our guide on using [JWT without SDKs][jwtnosdk]. 
 
 <Message warning>
 
@@ -54,22 +49,19 @@ At this time, our SDKs do not support the Client Credential Grant.
 
 </Message>
 
-Upon authorizing a JWT application in the Box Admin Console, a
-[Service Account][user-types] is automatically generated and is the default
-Access Token used when authenticating. This is an admin-like user and why
-applications leveraging JWT require explicit Box Admin approval before use.
+Upon authorizing a JWT application in the Box Admin Console, a [Service Account][user-types] is automatically generated and is the default Access Token used when authenticating. This is an admin-like user and why applications leveraging JWT require explicit Box Admin approval before use.
 
-## When to use JWT
+## JWTを使用する場合
 
-Server-side authentication with JWT is the ideal authentication method for apps
-that:
+JWTを使用するサーバー側認証は、以下に当てはまるアプリに最適な認証方式です。
 
-- Work with users that don't have a Box account
-- Want to use their own identity system
-- Don't want users to have to know that they are using Box
-- Want to store data within the application's Box account and not within the the
-  user's Box account
+* Boxアカウントを持たないユーザーを使用する
+* 独自のIDシステムを使用する
+* ユーザーにBoxを使用していることを認識させたくない
+* アプリケーションのBoxアカウントにデータを保存し、ユーザーのBoxアカウントには保存しない
 
 [app-type]: g://applications/select/
+
 [user-types]: g://authentication/user-types
+
 [jwtnosdk]: g://authentication/jwt/without-sdk/
